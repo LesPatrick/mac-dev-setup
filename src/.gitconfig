@@ -60,7 +60,7 @@
 	#############
 	ps = push
 	psf = push -f
-	psu = push -u
+	psu = push --set-upstream origin "$(git rev-parse --abbrev-ref HEAD)"
 	pso = push origin
 	psao = push --all origin
 	psfo = push -f origin
@@ -69,7 +69,7 @@
 	psfom = push -f origin master
 	psuom = push -u origin master
 	#############
-	pl = pull
+	pl = pull --rebase
 	plu = pull -u
 	plo = pull origin
 	plp = pull upstream
@@ -153,3 +153,20 @@
 [user]
 	name = <your_name>
 	email = <your_email>
+
+[core]
+  editor = code --wait
+[diff]
+  tool = vscode
+[difftool "vscode"]
+  cmd = code --wait --diff $LOCAL $REMOTE
+[merge]
+  tool = vscode
+[mergetool "vscode"]
+  cmd = code --wait $MERGED
+[mergetool]
+	keepBackup = false
+[push]
+	autoSetupRemote = true
+[pull]
+	rebase = true
