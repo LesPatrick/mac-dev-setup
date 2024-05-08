@@ -46,7 +46,11 @@ sudo chown -R root:staff /usr/local/share/zsh
   echo "fi"
 } >>$MAC_SETUP_PROFILE
 
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"# Install oh-my-zsh on top of zsh to getting additional functionality
+# Install oh-my-zsh on top of zsh to getting additional functionality
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
 # Terminal replacement https://www.iterm2.com
 brew install --cask iterm2
 # could be useful https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md
