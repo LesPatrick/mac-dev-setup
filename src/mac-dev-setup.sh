@@ -65,6 +65,8 @@ brew install --cask visual-studio-code
 code --install-extension humao.rest-client
 code --install-extension esbenp.prettier-vscode
 
+brew install xcodes
+
 # Tools
 brew install keka
 brew install --cask proxyman
@@ -75,7 +77,7 @@ brew install python
 pip install --user pipenv
 pip install --upgrade setuptools
 pip install --upgrade pip
-brew install pyenv rbenv xcodes asdf
+brew install pyenv rbenv xcodes asdf nvm
 # shellcheck disable=SC2016
 
 cp .zshrc "$HOME/.zshrc"
